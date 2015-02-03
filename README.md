@@ -4,7 +4,7 @@ August Valera is a Computer Engineering undergraduate at University of Californi
 
 ### Contact
 Email: <avalera@argus.tk>  
-Website: <avalera.argus.tk>  
+Website: <http://avalera.argus.tk>  
 
 ### Nav
 * [.. projects](http://projects.argus.tk)
