@@ -7,4 +7,4 @@ Email: <avalera@argus.tk>
 Website: <http://avalera.argus.tk>  
 
 ### Nav
-* [.. projects](http://projects.argus.tk)
+* [.. All projects](http://projects.argus.tk)
