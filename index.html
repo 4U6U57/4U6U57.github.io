@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>unquote</title>
+  <title>August Valera</title>
 
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
@@ -17,6 +17,7 @@
     href="components/core-toolbar/core-toolbar.html">
   <link rel="import"
     href="components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="components/paper-tabs/paper-icon-button.html"
   <link rel="import" href="post-list.html">
 
   <style>
@@ -64,28 +65,32 @@
 
   <core-header-panel>
 
-    <core-toolbar>
-
-      <paper-tabs id="tabs" selected="all" self-end>
-        <paper-tab name="all">All</paper-tab>
-        <paper-tab name="favorites">Favorites</paper-tab>
+   <core-toolbar class="medium-tall">
+  
+    <paper-icon-button icon="menu" on-tap="{{menuAction}}"></paper-icon-button>
+    <div flex>August Valera</div>
+    <paper-icon-button icon="search" on-tap="{{moreAction}}"></paper-icon-button>
+    
+    <div class="bottom fit" horizontal layout>
+    
+      <paper-tabs selected="0" flex style="max-width: 600px;">
+    
+        <paper-tab name="about">About</paper-tab>
+        <paper-tab name="contact">Contact</paper-tab>
+        
       </paper-tabs>
-
-    </core-toolbar>
+      
+    </div>
+  
+  </core-toolbar> 
 
     <div class="container" layout vertical center>
       <post-list show="all"></post-list>
     </div>
-
+  
   </core-header-panel>
 
   <script>
-  var tabs = document.querySelector('paper-tabs');
-  var list = document.querySelector('post-list');
-
-  tabs.addEventListener('core-select', function() {
-    list.show = tabs.selected;
-  });
   </script>
 </body>
 
