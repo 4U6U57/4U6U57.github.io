@@ -15,9 +15,9 @@
     <link rel="import" href="components/core-header-panel/core-header-panel.html">
     <link rel="import" href="components/core-toolbar/core-toolbar.html">
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
-	<link rel="import" href="components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="components/paper-tabs/paper-tabs.html">
     <link rel="import" href="components/paper-item/paper-item.html">
-    <link rel="import" href="post-list.html">
+    <link rel="import" href="components/core-animated-pages/core-animated-pages.html">
 
     <style>
       html,body {
@@ -26,9 +26,9 @@
         background-color: #E5E5E5;
         font-family: 'RobotoDraft', sans-serif;
       }
-	[drawer] {
-	background-color: white;
-}
+      [drawer] {
+        background-color: white;
+      }
       core-header-panel {
         height: 100%;
         overflow: auto;
@@ -66,52 +66,68 @@
 
       <core-drawer-panel forceNarrow>
       <core-header-panel navigation drawer>
-	<core-toolbar>
-		<paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>		
-		<div>August Valera</div>
-	</core-toolbar>
-      <paper-shadow>
-      <core-selector selected="0">
-      <paper-item>About</paper-item>
-      <paper-item>Contact</paper-item>
-      </core-selector>
-      </paper-shadow>
-      </core-header-panel>
+      <core-toolbar>
+      <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>		
+      <!-- div>August Valera</div> -->
+    </core-toolbar>
+    <paper-shadow>
+    <core-selector selected="0">
+    <paper-item onclick="tabSwitch(0);">About</paper-item>
+    <paper-item onClick="tabSwtich(1);">Contact</paper-item>
+    </core-selector>
+    </paper-shadow>
+    </core-header-panel>
 
-      <core-header-panel main>
+    <core-header-panel main mode="waterfall-tall">
 
-      <core-toolbar class="medium-tall">
+    <core-toolbar>
 
-      <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
-      <div flex>August Valera</div>
-	<!-- Commented out extra menu button
-      <paper-icon-button icon="search" on-tap="{{moreAction}}"></paper-icon-button>
-	-->
+    <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+    <div flex>August Valera</div>
+    <!-- Commented out extra menu button
+    <paper-icon-button icon="search" on-tap="{{moreAction}}"></paper-icon-button>
+    -->
 
-      <div class="bottom fit" horizontal layout>
-	
-	<!-- Commented out tabs for now
-        <paper-tabs selected="0" flex style="max-width: 600px;">
+    <div class="bottom fit" horizontal layout>
 
-        <paper-tab name="about">About</paper-tab>
-        <paper-tab name="contact">Contact</paper-tab>
+      <!-- Commented out tabs for now
+      <paper-tabs selected="0" flex style="max-width: 600px;">
 
-        </paper-tabs>
-	-->
+      <paper-tab name="about">About</paper-tab>
+      <paper-tab name="contact">Contact</paper-tab>
 
-      </div>
+      </paper-tabs>
+      -->
 
-      </core-toolbar> 
+    </div>
 
-      <div class="container" layout vertical center>
-        <post-list show="all"></post-list>
-      </div>
+    </core-toolbar> 
 
-      </core-header-panel>
-      </core-drawer-panel>
+    <div class="content" layout vertical center>
+      <core-animated-pages selected="0">
+      <section>
+      <div>About</div>
+      </section>
+      <section>
+      <div>Contact</div>
+      </section>
+      </core-animated-pages>
+    </div>
 
-      <script>
-      </script>
-    </body>
+    <script>
+      function home(int num){
+        //find <core-animated-pages> 
+        var c = document.querySelector('core-animated-pages');
+        //set the selected value to 0 (first <section>)
+        c.selected = num;
+      }
+    </script>
 
-  </html>
+    </core-header-panel>
+    </core-drawer-panel>
+
+    <script>
+    </script>
+  </body>
+
+</html>
