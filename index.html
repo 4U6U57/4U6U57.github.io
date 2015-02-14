@@ -18,6 +18,7 @@
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
     <link rel="import" href="components/paper-item/paper-item.html">
     <link rel="import" href="components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="post-card.html">
 
     <style>
       html,body {
@@ -37,6 +38,9 @@
       core-toolbar {
         background-color: #F57F17;
         color: white;
+      }
+      post-card {
+        margin-bottom: 30px;
       }
       #tabs {
         width: 100%;
@@ -71,9 +75,9 @@
       <!-- div>August Valera</div> -->
     </core-toolbar>
     <paper-shadow>
-    <core-selector selected="0">
-    <paper-item onclick="tabSwitch(0);">About</paper-item>
-    <paper-item onClick="tabSwtich(1);">Contact</paper-item>
+    <core-selector>
+    <paper-item>About</paper-item>
+    <paper-item>Contact</paper-item>
     </core-selector>
     </paper-shadow>
     </core-header-panel>
@@ -103,30 +107,47 @@
 
     </core-toolbar> 
 
-    <div class="content" layout vertical center>
-      <core-animated-pages selected="0">
-      <section>
-      <div>About</div>
+    <div class="content">
+      <core-animated-pages selected="1">
+      <section class="container">
+
+      <post-card><h2>About</h2></post-card>
+      <post-card icon="menu">
+      <h2>Email</h2>
+      <p>avalera@ucsc.edu</p>
+      </post-card>
       </section>
-      <section>
-      <div>Contact</div>
+
+      <section class="container">
+      <post-card><h2>Contact</h2></post-card>
+      
+      <post-card>
+      <h2>Email</h2>
+      <p>School: <a href="mailto:avalera@ucsc.edu">avalera@ucsc.edu</a></p>
+      <p>Work: <a href="mailto:avalera@argus.tk">avalera@argus.tk</a></p>
+      <p>Personal: <a href="mailto:4U6U57@gmail.com">4U6U57@gmail.com</a></p>
+      </post-card>
+
+      <post-card>
+      <h2>Social</h2>
+      <p>Google+: <a href="http://plus.google.com/u/0/+AugustValera">4U6U57</a></p>
+      <p>Facebook: <a href="http://facebook.com/4U6U57">4U6U57</a></p>
+      </post-card>
+
       </section>
+
       </core-animated-pages>
     </div>
-
-    <script>
-      function home(int num){
-        //find <core-animated-pages> 
-        var c = document.querySelector('core-animated-pages');
-        //set the selected value to 0 (first <section>)
-        c.selected = num;
-      }
-    </script>
 
     </core-header-panel>
     </core-drawer-panel>
 
     <script>
+      var pages = document.querySelector('paper-item');
+
+      pages.addEventListner('core-select', function() {
+        console.log("Selected: " + pages.selected);
+      });
     </script>
   </body>
 
