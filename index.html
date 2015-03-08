@@ -1,154 +1,53 @@
 <!doctype html>
+
 <html>
+<head>
+  <title>August Valera</title>
 
-  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <title>August Valera</title>
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <link rel="import" href="bower_components/core-icons/core-icons.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
+  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-toast/paper-toast.html">
 
-    <script src="components/webcomponentsjs/webcomponents.js">
-    </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-    <link rel="import" href="components/font-roboto/roboto.html">
-    <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
-    <link rel="import" href="components/core-header-panel/core-header-panel.html">
-    <link rel="import" href="components/core-toolbar/core-toolbar.html">
-    <link rel="import" href="components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="components/paper-item/paper-item.html">
-    <link rel="import" href="components/core-animated-pages/core-animated-pages.html">
-    <link rel="import" href="post-card.html">
+<body unresolved>
 
-    <style>
-      html,body {
-        height: 100%;
-        margin: 0;
-        background-color: #E5E5E5;
-        font-family: 'RobotoDraft', sans-serif;
-      }
-      [drawer] {
-        background-color: white;
-      }
-      core-header-panel {
-        height: 100%;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch; 
-      }
-      core-toolbar {
-        background-color: #F57F17;
-        color: white;
-      }
-      post-card {
-        margin-bottom: 30px;
-      }
-      #tabs {
-        width: 100%;
-        margin: 0;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        text-transform: uppercase;
-      }
-      .container {
-        width: 80%;
-        margin: 50px auto;
-      }
-      @media (min-width: 481px) {
-        #tabs {
-          width: 200px;
-        }
-        .container {
-          width: 400px;
-        }
-      </style>
-
-    </head>
-
-    <body unresolved>
-
-      <core-drawer-panel forceNarrow>
-      <core-header-panel navigation drawer>
+  <core-drawer-panel forceNarrow>
+    <core-header-panel navigation drawer>
       <core-toolbar>
-      <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>		
-      <!-- div>August Valera</div> -->
-    </core-toolbar>
-    <paper-shadow>
-    <core-selector>
-    <paper-item>About</paper-item>
-    <paper-item>Contact</paper-item>
-    </core-selector>
-    </paper-shadow>
+        <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>
+      </core-toolbar>
+      <core-selector>
+        <paper-item>About</paper-item>
+        <paper-item>Contact</paper-item>
+      </core-selector>
     </core-header-panel>
 
     <core-header-panel main mode="waterfall-tall">
-
-    <core-toolbar>
-
-    <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
-    <div flex>August Valera</div>
-    <!-- Commented out extra menu button
-    <paper-icon-button icon="search" on-tap="{{moreAction}}"></paper-icon-button>
-    -->
-
-    <div class="bottom fit" horizontal layout>
-
-      <!-- Commented out tabs for now
-      <paper-tabs selected="0" flex style="max-width: 600px;">
-
-      <paper-tab name="about">About</paper-tab>
-      <paper-tab name="contact">Contact</paper-tab>
-
-      </paper-tabs>
-      -->
-
-    </div>
-
-    </core-toolbar> 
-
-    <div class="content">
-      <core-animated-pages selected="1">
-      <section class="container">
-
-      <post-card><h2>About</h2></post-card>
-      <post-card icon="menu">
-      <h2>Email</h2>
-      <p>avalera@ucsc.edu</p>
-      </post-card>
-      </section>
-
-      <section class="container">
-      <post-card><h2>Contact</h2></post-card>
-      
-      <post-card>
-      <h2>Email</h2>
-      <p>School: <a href="mailto:avalera@ucsc.edu">avalera@ucsc.edu</a></p>
-      <p>Work: <a href="mailto:avalera@argus.tk">avalera@argus.tk</a></p>
-      <p>Personal: <a href="mailto:4U6U57@gmail.com">4U6U57@gmail.com</a></p>
-      </post-card>
-
-      <post-card>
-      <h2>Social</h2>
-      <p>Google+: <a href="http://plus.google.com/u/0/+AugustValera">4U6U57</a></p>
-      <p>Facebook: <a href="http://facebook.com/4U6U57">4U6U57</a></p>
-      </post-card>
-
-      </section>
-
-      </core-animated-pages>
-    </div>
-
+      <core-toolbar>
+        <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+        <span flex>August Valera</span>
+      </core-toolbar>
     </core-header-panel>
-    </core-drawer-panel>
+  </core-drawer-panel>
 
-    <script>
-      var pages = document.querySelector('paper-item');
-
-      pages.addEventListner('core-select', function() {
-        console.log("Selected: " + pages.selected);
-      });
-    </script>
-  </body>
-
+  <script src="main.js"></script>
+</body>
 </html>
