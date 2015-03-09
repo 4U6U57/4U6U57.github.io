@@ -12,6 +12,13 @@ body {
   -webkit-touch-callout: none;
 }
 
+H3{
+  font-family: RobotoDraft, sans-serif;
+  color: black;
+  font-size: 50px;
+  font-weight: 200;
+}
+
 section {
   margin: 20px;
 }
@@ -26,6 +33,14 @@ core-toolbar {
   color: #fff;
   font-size: 20px;
   font-weight: 400;
+}
+
+paper-item core-icon {
+  margin-right: 24px;
+}
+
+paper-item.core-selected {
+  background-color: #FFECB3;
 }
 
 [drawer] {

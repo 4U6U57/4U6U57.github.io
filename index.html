@@ -34,9 +34,12 @@
       <core-toolbar>
         <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>
       </core-toolbar>
-      <core-selector>
-        <paper-item onclick="pageZero();">About</paper-item>
-        <paper-item onclick="pageOne();">Contact</paper-item>
+      <core-selector selected="0">
+        <paper-item onclick="pageZero();" core-drawer-close>
+          <core-icon icon="account-circle"></core-icon>About</paper-item>
+        <paper-item onclick="pageOne();" core-drawer-close>
+          <core-icon icon="question-answer"></core-icon>Contact</paper-item>
+
       </core-selector>
     </core-header-panel>
 
@@ -49,10 +52,13 @@
     <div class="content">
       <core-animated-pages selected="0">
         <section class="container">
-          <div>Zero</div>
+          <div>
+            <h3>About</h3>
         </section>
         <section class="container">
-          <div>One</div>
+          <div>
+            <h3>Contact</h3>
+          </div>
         </section>
         <section class="container">
           <div>Two</div>
