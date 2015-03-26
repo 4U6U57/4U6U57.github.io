@@ -23,8 +23,12 @@ section {
   margin: 20px;
 }
 
-a, a:hover {
+a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 core-toolbar {
