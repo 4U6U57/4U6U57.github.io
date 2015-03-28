@@ -50,6 +50,8 @@
     <core-selector id="drawer" selected="0">
     <paper-item onclick="toaster('#drawer-toast');" core-drawer-toggle>
       <core-icon icon="apps"></core-icon>Home</paper-item>
+    <a style="color:black" href="publications/index.html"><paper-item core-drawer-toggle>
+      <core-icon icon="social:school"></core-icon>Publications</paper-item></a>
     
     <!-- Commenting out drawer elements corresponding to pages
     <paper-item onclick="turnPage(0);" core-drawer-toggle>
@@ -84,7 +86,7 @@
       <div>
         <h3>About</h3>
         <post-card>
-          <p>August Valera is <span onclick="turnPage(2); toaster('#test-toast');">a</span> technological enthusiast and all around cool guy.</p>
+          <p>August Valera is <span onclick="turnPage(2); toaster('#test-toast');">a</span> technological enthusiast and <span onclick="toaster('#cool-toast');">all around cool guy</span>.</p>
         </post-card>
         <post-card>
           <core-icon icon="social:school"></core-icon>
@@ -104,7 +106,7 @@
           <core-icon icon="polymer"></core-icon>
           <h4>This Site</h4>
           <p>Currently learning how to code HTML/CSS/Javascript in his spare time, hence this site.</p>
-          <p>It is hosted on <a href="http://4U6U57.github.io">GitHub Pages (github.io)</a>, and is mirrored on the <a href="http://people.ucsc.edu/~avalera">UCSC public server (people.ucsc.edu)</a></p>
+          <p>It is hosted on <a href="http://4U6U57.github.io">GitHub Pages</a> (github.io), and is mirrored on the <a href="http://people.ucsc.edu/~avalera">UCSC public server</a> (people.ucsc.edu).</p>
           <p>The project is completely open source, and the <span class="pseudo-link" onclick="dialogue('#git-dialog');">source code</span> (github.com) is made available to the public.</p>
           <p>This site is built on web components published by the <a href="https://www.polymer-project.org">Polymer Project</a> (Google I/O 2014).</p>
         </post-card>
@@ -135,12 +137,10 @@
           <core-icon icon="account-circle"></core-icon>
           <h4>Social Media</h4>
           <p>I rarely post of social media, but here are some links anyway:</p>
-          <p>
-            <a href="http://www.facebook.com/4U6U57/about" style="color: #3b5998"><paper-button class="colored">Facebook</paper-button></a>
-            <a href="https://plus.google.com/+AugustValera/about" style="color:#dd4b39"><paper-button class="colored">Google+</paper-button></a>
-            <a href="http://www.linkedin.com/in/AugustValera" style="color:#007bb6"><paper-button class="colored">LinkedIn</paper-button></a>
-            <a href="https://twitter.com/4U6U57" style="color:#00aced"><paper-button class="colored">Twitter</paper-button></a>
-          </p>
+          <a href="http://www.facebook.com/4U6U57/about" style="color: #3b5998"><paper-button class="colored">Facebook</paper-button></a>
+          <a href="https://plus.google.com/+AugustValera/about" style="color:#dd4b39"><paper-button class="colored">Google+</paper-button></a>
+          <a href="http://www.linkedin.com/in/AugustValera" style="color:#007bb6"><paper-button class="colored">LinkedIn</paper-button></a>
+          <a href="https://twitter.com/4U6U57" style="color:#00aced"><paper-button class="colored">Twitter</paper-button></a>
         </post-card>
       </div>
       </section>
@@ -213,7 +213,8 @@
     </core-drawer-panel>
     
     <paper-toast id="drawer-toast" text="Other drawer elements are in development. Please check back later."></paper-toast>
-    <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed to anyone, as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
+    <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed here to anyone, as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
+    <paper-toast id="cool-toast" text="What, you don't think this site is cool? Cuz it's pretty damn cool. And I made it, so I'm cool by association, at the very least."></paper-toast>
     <paper-dialog id="git-dialog" heading="View Source Code" transition="paper-dialog-transition-bottom">
       <p>You are about to navigate to an external site (github.com). Would you like to proceed?</p>
       <!-- <paper-button onclick="document.querySelector('#git-dialog').close();" dismissive>Cancel</paper-button> Cannot figure out cancel.-->
