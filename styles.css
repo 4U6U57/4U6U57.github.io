@@ -30,12 +30,14 @@ section {
   margin: 20px;
 }
 
-a {
+a, .pseudo-link {
   text-decoration: none;
+  color: #FF9800;
 }
 
-a:hover {
+a:hover, .pseudo-link:hover {
   text-decoration: underline;
+  color: #FFA726;
 }
 
 core-toolbar {

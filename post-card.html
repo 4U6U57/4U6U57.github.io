@@ -24,18 +24,18 @@
       font-size: 1.8rem;
       font-weight: 300;
     }
-    polyfill-next-selector { content: '.card-header img'; }
-    .card-header ::content img {
-      width: 70px;
+    polyfill-next-selector { content: '.card-header core-icon'; }
+    .card-header ::content core-icon {
       border-radius: 50%;
-      margin: 10px;
+      margin-left: 15px;
+      color: #E65100;
     }
     </style>
 
     <div class="card-header" layout horizontal center>
 
-      <content select="core-icon"></content>
       <content select="h4"></content>
+      <content select="core-icon"></content>
 
     </div>
 

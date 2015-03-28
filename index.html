@@ -11,6 +11,16 @@
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 
     <link rel="import" href="bower_components/core-icons/core-icons.html">
+    <!--link rel="import" href="bower_components/core-icons/av-icons.html"-->
+    <link rel="import" href="bower_components/core-icons/communication-icons.html">
+    <!--link rel="import" href="bower_components/core-icons/device-icons.html"-->
+    <!--link rel="import" href="bower_components/core-icons/editor-icons.html"-->
+    <!--link rel="import" href="bower_components/core-icons/hardware-icons.html"-->
+    <!--link rel="import" href="bower_components/core-icons/image-icons.html"-->
+    <!--link rel="import" href="bower_components/core-icons/maps-icons.html"-->
+    <!--link rel="import" href="bower_components/core-icons/notification-icons.html"-->
+    <link rel="import" href="bower_components/core-icons/social-icons.html">
+    <!--link rel="import" href="bower_components/core-toolbar/core-toolbar.html"-->
     <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
     <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
     <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
@@ -39,7 +49,7 @@
     </core-toolbar>
     <core-selector id="drawer" selected="0">
     <paper-item onclick="toaster('#drawer-toast');" core-drawer-toggle>
-      <core-icon icon="account-circle"></core-icon>Home</paper-item>
+      <core-icon icon="apps"></core-icon>Home</paper-item>
     
     <!-- Commenting out drawer elements corresponding to pages
     <paper-item onclick="turnPage(0);" core-drawer-toggle>
@@ -49,7 +59,7 @@
     <paper-item onclick="turnPage(2);" core-drawer-toggle>
     <core-icon icon="folder"></core-icon>Projects</paper-item>
     -->
-   <paper-item onclick="dialogue('#git-dialog');" core-drawer-toggle>
+   <paper-item class="pseudo-link" onclick="dialogue('#git-dialog');" core-drawer-toggle>
       <core-icon icon="extension"></core-icon>Source</paper-item>
     </core-selector>
     </core-header-panel>
@@ -77,6 +87,7 @@
           <p>August Valera is <span onclick="turnPage(2); toaster('#test-toast');">a</span> technological enthusiast and all around cool guy.</p>
         </post-card>
         <post-card>
+          <core-icon icon="social:school"></core-icon>
           <h4>Education</h4>
           <ul>
             <li>Graduated in 2013 from Westmoor High School in Daly City, CA.</li>
@@ -90,9 +101,12 @@
           </ul>
         </post-card>
         <post-card>
+          <core-icon icon="polymer"></core-icon>
           <h4>This Site</h4>
           <p>Currently learning how to code HTML/CSS/Javascript in his spare time, hence this site.</p>
-      
+          <p>It is hosted on <a href="http://4U6U57.github.io">GitHub Pages (github.io)</a>, and is mirrored on the <a href="http://people.ucsc.edu/~avalera">UCSC public server (people.ucsc.edu)</a></p>
+          <p>The project is completely open source, and the <span class="pseudo-link" onclick="dialogue('#git-dialog');">source code</span> (github.com) is made available to the public.</p>
+          <p>This site is built on web components published by the <a href="https://www.polymer-project.org">Polymer Project</a> (Google I/O 2014).</p>
         </post-card>
       </div>
       </section>
@@ -100,9 +114,15 @@
       <div>
         <h3>Contact</h3>
         <post-card>
+          <core-icon icon="communication:chat"></core-icon>
+          <h4>Chat</h4>
+          <p>I regularly use Google Hangouts: <strong>4U6U57@gmail.com</strong></p>
+          <p>I very rarely check Facebook Messenger.</p>
+        </post-card>
+        <post-card>
+          <core-icon icon="communication:email"></core-icon>
           <h4>Email</h4>
-          <p>I can be reached at the following email addresses.</p>
-          <ul>
+          <ul>I can be reached at the following email addresses:
             <li>Personal: <strong>4U6U57@gmail.com</strong></li>
             <li>School: <strong>avalera@ucsc.edu</strong></li>
             <li>Work: <strong>avalera@argus.tk</strong></li>
@@ -110,6 +130,17 @@
           <p>I have forwarding set up such that, no matter which address you 
           send it to, it will all end up in the same place. Therefore, please 
           try to use the relevant address when trying to reach me.</p>
+        </post-card>
+        <post-card>
+          <core-icon icon="account-circle"></core-icon>
+          <h4>Social Media</h4>
+          <p>I rarely post of social media, but here are some links anyway:</p>
+          <p>
+            <a href="http://www.facebook.com/4U6U57/about" style="color: #3b5998"><paper-button class="colored">Facebook</paper-button></a>
+            <a href="https://plus.google.com/+AugustValera/about" style="color:#dd4b39"><paper-button class="colored">Google+</paper-button></a>
+            <a href="http://www.linkedin.com/in/AugustValera" style="color:#007bb6"><paper-button class="colored">LinkedIn</paper-button></a>
+            <a href="https://twitter.com/4U6U57" style="color:#00aced"><paper-button class="colored">Twitter</paper-button></a>
+          </p>
         </post-card>
       </div>
       </section>
