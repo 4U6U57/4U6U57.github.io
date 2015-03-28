@@ -29,7 +29,7 @@
 
   <body unresolved>
 
-    <core-drawer-panel> <!--forceNarrow-->
+    <core-drawer-panel forceNarrow>
     <core-header-panel navigation drawer>
     <core-toolbar>
     <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>
@@ -51,6 +51,12 @@
     </core-toolbar>
 
     <div class="content">
+      <paper-tabs selected="0">
+-
+-        <paper-tab name="about" onclick="turnPage(0);">About</paper-tab>
+-        <paper-tab name="contact" onclick="turnPage(1);">Contact</paper-tab>
+-
+-     </paper-tabs>
       <core-animated-pages id="pages" selected="0">
       <section class="container">
       <div>
