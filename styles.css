@@ -12,11 +12,18 @@ body {
   -webkit-touch-callout: none;
 }
 
-H3{
+h3 {
   font-family: RobotoDraft, sans-serif;
   color: black;
   font-size: 50px;
   font-weight: 200;
+}
+
+h4 {
+  font-family: RobotoDraft, sans-serif;
+  color: black;
+  font-size: 30px;
+  font-weight: 130;
 }
 
 section {
@@ -91,9 +98,14 @@ paper-tabs[noink][nobar] paper-tab.core-selected {
 paper-toast {
   background-color: white;
   color: black;
-  position: fixed; 
   outline: none; 
-  z-index: 18; 
+  right: 30px;
+  left: auto;
   box-sizing: border-box;
   max-width: 300px;
+}
+
+html /deep/ [affirmative] {
+  color:#F57F17;
+  background-color: #FFECB3;
 }

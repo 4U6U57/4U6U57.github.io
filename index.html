@@ -18,11 +18,14 @@
     <link rel="import" href="bower_components/font-roboto/roboto.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="bower_components/paper-item/paper-item.html">
-    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="post-card.html">
+    
 
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -34,9 +37,9 @@
     <core-toolbar>
     <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>
     </core-toolbar>
-    <core-selector id="drawerSelect" selected="0">
+    <core-selector id="drawer" selected="0">
     <paper-item onclick="toaster('#drawer-toast');" core-drawer-toggle>
-    <core-icon icon="account-circle"></core-icon>Home</paper-item>
+      <core-icon icon="account-circle"></core-icon>Home</paper-item>
     
     <!-- Commenting out drawer elements corresponding to pages
     <paper-item onclick="turnPage(0);" core-drawer-toggle>
@@ -46,15 +49,17 @@
     <paper-item onclick="turnPage(2);" core-drawer-toggle>
     <core-icon icon="folder"></core-icon>Projects</paper-item>
     -->
+   <paper-item onclick="dialogue('#git-dialog');" core-drawer-toggle>
+      <core-icon icon="extension"></core-icon>Source</paper-item>
     </core-selector>
     </core-header-panel>
 
-    <core-header-panel main mode="waterfall-tall">
+    <core-header-panel main> <!--mode="waterfall-tall"-->
     <core-toolbar class="medium-tall">
     <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
     <span flex>August Valera</span>
     <div class="bottom fit" horizontal layout>
-      <paper-tabs selected="0" flex horizontal center layout>
+      <paper-tabs id="tabs" selected="0" flex horizontal center layout>
 -        <paper-tab name="about" onclick="turnPage(0);">About</paper-tab>
 -        <paper-tab name="contact" onclick="turnPage(1);">Contact</paper-tab>
 -     </paper-tabs>
@@ -68,14 +73,44 @@
       <section class="container">
       <div>
         <h3>About</h3>
-        <p>August Valera is <span onclick="turnPage(2); toaster('#test-toast');">a</span> second year Computer Engineering student at Crown College, UC Santa Cruz.</p>
-        <p>He is currently learning how to code HTML/CSS/Javascript in his spare time, hence this site.</p>
+        <post-card>
+          <p>August Valera is <span onclick="turnPage(2); toaster('#test-toast');">a</span> technological enthusiast and all around cool guy.</p>
+        </post-card>
+        <post-card>
+          <h4>Education</h4>
+          <ul>
+            <li>Graduated in 2013 from Westmoor High School in Daly City, CA.</li>
+            <li>Currently studying in University of California, Santa Cruz
+              <ul>
+                <li>Proposed Computer Engineering (B.S.)</li>
+                <li>Second year student</li>
+                <li>Affiliated with Crown College</li>
+              </ul>
+            </li>
+          </ul>
+        </post-card>
+        <post-card>
+          <h4>This Site</h4>
+          <p>Currently learning how to code HTML/CSS/Javascript in his spare time, hence this site.</p>
+      
+        </post-card>
       </div>
       </section>
       <section class="container">
       <div>
         <h3>Contact</h3>
-        <p>I can be reached at <a href"mailto:avalera@ucsc.edu">avalera@ucsc.edu</a></p>
+        <post-card>
+          <h4>Email</h4>
+          <p>I can be reached at the following email addresses.</p>
+          <ul>
+            <li>Personal: <strong>4U6U57@gmail.com</strong></li>
+            <li>School: <strong>avalera@ucsc.edu</strong></li>
+            <li>Work: <strong>avalera@argus.tk</strong></li>
+          </ul>
+          <p>I have forwarding set up such that, no matter which address you 
+          send it to, it will all end up in the same place. Therefore, please 
+          try to use the relevant address when trying to reach me.</p>
+        </post-card>
       </div>
       </section>
       <section class="container">
@@ -148,6 +183,11 @@
     
     <paper-toast id="drawer-toast" text="Other drawer elements are in development. Please check back later."></paper-toast>
     <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed to anyone, as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
+    <paper-dialog id="git-dialog" heading="View Source Code" transition="paper-dialog-transition-bottom">
+      <p>You are about to navigate to an external site (github.com). Would you like to proceed?</p>
+      <!-- <paper-button onclick="document.querySelector('#git-dialog').close();" dismissive>Cancel</paper-button> Cannot figure out cancel.-->
+      <a href="http://github.com/4U6U57/4U6U57.github.io.git"><paper-button affirmative default>OK</paper-button></a>
+    </paper-dialog>
     <script src="main.js"></script>
   </body>
 </html>

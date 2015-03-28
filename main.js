@@ -1,12 +1,10 @@
-var toastGroupTemplate = document.querySelector('#toastGroup');
-toastGroupTemplate.showToast = function() {
-  document.querySelector('#toast').show();
-};
-
-function turnPage(page) {
-  document.querySelector('core-animated-pages').selected = page;
-  document.querySelector('core-drawer');
+function turnPage(pageNum) {
+  document.querySelector('#pages').selected = pageNum;
+  document.querySelector('#tabs').selected = pageNum;
 }
 function toaster(id) {
   document.querySelector(id).show();
+}
+function dialogue(id) {
+  document.querySelector(id).toggle();
 }
