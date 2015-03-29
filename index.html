@@ -108,7 +108,13 @@
               <div>
                 <h3>About</h3>
                 <post-card>
-                  <p>August Valera is <span onclick="turnPage(5); toaster('#test-toast');">a</span> technological enthusiast and <span onclick="toaster('#cool-toast');">all around cool guy</span>.</p>
+                  <div itemscope itemtype="http://schema.org/Person">
+                    <p>
+                      I'm <strong class="pseudo-link" onclick="toaster('#name-toast');";><span itemprop="name">August Valera</span></strong>, a second year <span itemprop="jobTitle">student</span> at <span itemprop="worksFor">UCSC</span> in <span itemprop="workLocation">Santa Cruz, CA</span>.
+                      I am interested in tech innovations, user inteface design, and Android development. 
+                      My hobbies are coding, watching anime, and playing tennis.
+                    </p>
+                  </div>
                 </post-card>
                 <post-card>
                   <core-icon icon="social:school"></core-icon>
@@ -149,9 +155,9 @@
                   <h4>Email</h4>
                   <p>I can be reached at the following email addresses:</p>
                   <ul>
-                    <li>Personal: <strong>4U6U57@gmail.com</strong></li>
-                    <li>School: <strong>avalera@ucsc.edu</strong></li>
-                    <li>Work: <strong>avalera@argus.tk</strong></li>
+                    <li>Personal: <a href="mailto:4U6U57@gmail.com" style="color:black"><strong>4U6U57@gmail.com</strong></a></li>
+                    <li>School: <a href="mailto:avalera@ucsc.edu" style="color:black"><strong>avalera@ucsc.edu</strong></a></li>
+                    <li>Work: <a href="mailto:avalera@argus.tk" style="color:black"><strong>avalera@argus.tk</strong></a></li>
                   </ul>
                   <p>I have forwarding set up such that, no matter which address you 
                   send it to, it will all end up in the same place. Therefore, please 
@@ -325,7 +331,7 @@
     </core-drawer-panel>
     <paper-toast id="drawer-toast" text="You are currently on this page."></paper-toast>
     <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed here to anyone, as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
-    <paper-toast id="cool-toast" text="What, you don't think this site is cool? Cuz it's pretty damn cool. And I made it, so I'm cool by association, at the very least."></paper-toast>
+    <paper-toast id="name-toast" text="#YOLOSWAG" onclick="turnPage(5); toaster('#test-toast');";></paper-toast>
     <paper-dialog id="git-dialog" heading="Source Code" transition="paper-dialog-transition-bottom">
       <p>You are about to view the source code of this site. This is hosted on an external domain (github.com).</p>
       <!-- <paper-button onclick="document.querySelector('#git-dialog').close();" dismissive>Cancel</paper-button> Cannot figure out cancel.-->
