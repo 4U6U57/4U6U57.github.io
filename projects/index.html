@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Projects - August Valera</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="../bower_components/core-icons/core-icons.html">
+  <link rel="import" href="../bower_components/core-icons/social-icons.html">
+  <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import" href="../bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="../bower_components/font-roboto/roboto.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+  <link rel="import" href="../post-card.html">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body unresolved>
+  <core-header-panel>
+    <core-toolbar>
+      <a style="color:white" href="../index.html"><paper-icon-button icon="arrow-back"></paper-icon-button></a>
+      <span flex>August Valera</span>
+      <paper-fab icon="bug-report" onclick="dialogue('#project-dialog');"></paper-fab>
+    </core-toolbar>
+    <div class="content">
+      <section class="container">
+        <h3>Projects</h3>
+        <post-card>
+          <p>Listed below are some of the projects that I am currently working on, for school and as side-projects.</p>
+        </post-card>
+        <post-card>
+          <core-icon icon="polymer"></core-icon>
+          <h4>This Site</h4>
+          <p>This site definitely counts as one of my more ambitious projects.</p>
+          <p>Rather than use a hosting service such as Wordpress, Google Sites, etc. as I've done in the past, I decided to try my hand at writing base HTML on an actual server.</p>
+          <p>It started out in my uni's UNIX Timeshare, which happened to have a public_html/ directory for posting basic sites.</p>
+          <p>It was slow at first, with me learning very basic HTML/CSS and Javascript through Codeacademy.</p>
+          <p>It was also around this time that I discovered the <a href="https://www.polymer-project.org">Polymer Project</a>, a web component library by Google incorperating ideals of Material Design.</p>
+          <p>Currently, I am dual hosting on the UCSC server, as well as GitHub pages, so I can make use of GitHub's versioning.</p>
+          <p>I'm also using it to host papers that I write for school, so that they will be added to Google Scholar.</p>
+          <a href="https://github.com/4U6U57/4U6U57.github.io.git"><paper-button class="colored" dismissive>GitHub repo</paper-button></a>
+        </post-card>
+        <post-card>
+          <core-icon icon="android"></core-icon>
+          <h3></h3>
+        </post-card>
+      </section>
+    </div>
+  </core-header-panel>
+
+  <paper-dialog id="project-dialog" heading="Projects" transition="paper-dialog-transition-bottom">
+    <p>View my code contributions at the following repo hosting sites:</p>
+    <!a href="https://bitbucket.org/4U6U57" style="color:#205081"><paper-button class="colored" dismissive>Bitbucket</paper-button></a>
+    <a href="https://github.com/4U6U57" style="color:#4183c4"><paper-button class="colored" dismissive>GitHub</paper-button></a>
+    <a href="http://people.ucsc.edu/~avalera/files"><paper-button affirmative default>UCSC Public Hosting</paper-button></a>
+  </paper-dialog>
+
+  <script src="../main.js"></script>
+</body>
+</html>
