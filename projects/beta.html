@@ -35,13 +35,12 @@
     <core-drawer-panel rightDrawer>
       <core-header-panel navigation drawer>
         <core-toolbar>
-          <paper-icon-button onclick="turnPage(0);" icon="home"></paper-icon-button>
           <span flex>Projects</span>
           <paper-icon-button icon="view-list" core-drawer-toggle></paper-icon-button>
         </core-toolbar>
         <core-selector id="tabs" selected="0">
-          <paper-item onclick="turnPage(0);">
-            <core-icon class="psuedo-link" icon="home"></core-icon>Projects Home</paper-item>
+          <paper-item class="pseudo-link" onclick="turnPage(0);">
+            <core-icon icon="home"></core-icon>Projects Home</paper-item>
           <paper-item onclick="turnPage(1);">
             <core-icon icon="polymer"></core-icon>This Site</paper-item>
           <paper-item onclick="turnPage(2);">
@@ -57,6 +56,7 @@
         <core-toolbar>
           <a style="color:white" href="../index.html"><paper-icon-button icon="arrow-back"></paper-icon-button></a>
           <span flex>August Valera</span>
+          <paper-icon-button onclick="turnPage(0);" icon="home"></paper-icon-button>
           <paper-icon-button icon="view-list" core-drawer-toggle></paper-icon-button>
         </core-toolbar>
     
@@ -83,22 +83,57 @@
                     On occasion, if there is a lab that I do for a class that I think is really cool, I will post it here anyway.
                   </p>
                 </post-card>
+                <post-card>
+                  <core-icon icon="view-module"></core-icon>
+                  <h4>Categories</h4>
+                  <p>In the future, this card will link to the various projects, organized by category. For now, it is a placeholder card.</p>
+                </post-card>
               </div>
             </section>
             <section class="container">
               <div>
-                <h3>This Site</h3>
+                <h3>Personal Website</h3>
                 <post-card>
                   <core-icon icon="polymer"></core-icon>
                   <h4>Programming in Polymer</h4>
-                  <p>This site definitely counts as one of my more ambitious projects.</p>
-                  <p>Rather than use a hosting service such as Wordpress, Google Sites, etc. as I've done in the past, I decided to try my hand at writing base HTML on an actual server.</p>
-                  <p>It started out in my uni's UNIX Timeshare, which happened to have a public_html/ directory for posting basic sites.</p>
-                  <p>It was slow at first, with me learning very basic HTML/CSS and Javascript through Codeacademy.</p>
-                  <p>It was also around this time that I discovered the <a href="https://www.polymer-project.org">Polymer Project</a>, a web component library by Google incorperating ideals of Material Design.</p>
-                  <p>Currently, I am dual hosting on the UCSC server, as well as GitHub pages, so I can make use of GitHub's versioning.</p>
-                  <p>I'm also using it to host papers that I write for school, so that they will be added to Google Scholar.</p>
-                  <a href="https://github.com/4U6U57/4U6U57.github.io.git"><paper-button class="colored">GitHub repo</paper-button></a>
+                  <p>
+                    This site definitely counts as one of my more ambitious projects.
+                    Rather than use a hosting service such as Wordpress, Google Sites, 
+                    etc. as I've done in the past, I decided to try my hand at writing base HTML on an actual server.
+                    It started out on my uni's UNIX Timeshare, 
+                    which happened to have a public_html/ directory for posting raw HTML files.
+                    It was slow at first, with me learning very basic HTML/CSS and Javascript through Codeacademy.
+                    Around this time, I discovered the <a href="https://www.polymer-project.org">Polymer Project</a>, 
+                    a web component library by Google incorparating Material Design elements. I instantly adapted it.
+                  </p>
+                  <p>
+                    Currently, I am dual hosting on the UCSC server, as well as GitHub pages, 
+                    so I can make use of GitHub's version control and keep track of my progress
+                    Just recently, I added the <a href="../publications/index.html">Publications</a> page so that
+                    I can publish my school papers online and have them parsed by Google Scholar.
+                    I am most recently working on the this page, the Projects section.
+                  </p>
+                </post-card>
+                <post-card>
+                  <core-icon icon="settings-input-antenna"></core-icon>
+                  <h4>Source Code</h4>
+                  <p>
+                    This project is technically my "root" GitHub Pages repo. It is hosted under my personal GitHub account.
+                    You can view the contents (this site) hosted on GitHub with the link below.
+                  </p>
+                  <a href="https://github.com/4U6U57/4U6U57.github.io.git">
+                    <paper-button class="colored">GitHub repo</paper-button></a>
+                  <a href="https://4U6U57.github.io" style="color:black">
+                    <paper-button class="colored">Website</paper-button></a>
+                </post-card>
+                <post-card>
+                  <core-icon icon="language"></core-icon>
+                  <h4>Skills Shown</h4>
+                  <ul>
+                    <li>Beginner HTML/CSS</li>
+                    <li>Beginner Javascript</li>
+                    <li>Mastery of Polymer Project elements</li>
+                  </ul>
                 </post-card>
               </div>
             </section>
@@ -112,7 +147,23 @@
                   <p>So far, my contributions amount to creating a proprietary tab system that we ended up not needing, and assisting in streamlining the proprietary drawer system that we ended up not needing.</p>
                   <p>In other words, not much.</p>
                   <p>It's pretty cool, though, and we're (they're) making good progress.</p>
-                  <a href="https://github.com/ChandlerMoeller/TestAppPleaseIgnore.git"><paper-button class="colored" dismissive>GitHub repo</paper-button></a>
+                </post-card>
+                <post-card>
+                  <core-icon icon="settings-input-antenna"></core-icon>
+                  <h4>Source Code</h4>
+                  <p>This project is hosted on Chandler's GitHub account. There is no current Google Play listing.</p>
+                  <a href="https://github.com/ChandlerMoeller/TestAppPleaseIgnore.git">
+                    <paper-button class="colored">GitHub repo</paper-button></a>
+                  <paper-button class="colored" onclick="toaster('#app-toast');">Google Play</paper-button>
+                </post-card>
+                <post-card>
+                  <core-icon icon="language"></core-icon>
+                  <h4>Skills Shown</h4>
+                  <ul>
+                    <li>Basic GitHub</li>
+                    <li>Beginner XML</li>
+                    <li>Pretty Good User Interface Design</li>
+                  </ul>
                 </post-card>
               </div>
             </section>
@@ -144,13 +195,14 @@
         </div>
         <paper-fab class="bottom" icon="bug-report" onclick="dialogue('#project-dialog');"></paper-fab>
       </core-header-panel>
-      <paper-dialog id="project-dialog" style="left:2em; top:2em" heading="Public Repos" transition="paper-dialog-transition-bottom">
+    </core-drawer-panel>
+    <paper-toast id="app-toast" text="Sorry, the app is not yet available on Google Play. Keep checking!"></paper-toast>
+      <paper-dialog id="project-dialog" heading="Public Repos" transition="paper-dialog-transition-bottom">
         <p>You can view my code contributions at the following repo hosts:</p>
         <a href="https://bitbucket.org/4U6U57" style="color:#205081"><paper-button class="colored" dismissive>Bitbucket</paper-button></a>
         <a href="https://github.com/4U6U57" style="color:#4183c4"><paper-button class="colored" dismissive>GitHub</paper-button></a>
         <a href="http://people.ucsc.edu/~avalera/files" style="color:#F1B521"><paper-button affirmative default>UCSC Public Hosting</paper-button></a>
       </paper-dialog>
-    </core-drawer-panel>
     <script src="../main.js"></script>
   </body>
 </html>
