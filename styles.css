@@ -94,9 +94,17 @@ paper-checkbox {
 
 paper-fab {
   position: absolute !important;
-  top: 35px;
   right: 1em;
   z-index: 1;
+}
+
+core-toolbar paper-fab {
+  top: 35px;
+}
+
+paper-fab.bottom {
+  position:fixed !important;
+  bottom: 35px;
 }
 
 paper-tabs {
