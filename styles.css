@@ -102,6 +102,19 @@ core-toolbar paper-fab {
   top: 35px;
 }
 
+core-toolbar paper-item {
+  font-size: 14px;
+  color:black;
+}
+
+core-toolbar paper-item.core-selected {
+  background-color: white;
+}
+
+core-toolbar paper-item core-icon {
+  color:black;
+}
+
 paper-fab.bottom {
   position:fixed !important;
   bottom: 35px;

@@ -39,6 +39,8 @@
     <!--link rel="import" href="bower_components/core-icons/maps-icons.html"-->
     <!--link rel="import" href="bower_components/core-icons/notification-icons.html"-->
     <link rel="import" href="bower_components/core-icons/social-icons.html">
+    <link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-menu/core-menu.html">
     <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
     <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
     <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
@@ -47,9 +49,11 @@
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="bower_components/paper-dropdown/paper-dropdown.html">
     <link rel="import" href="bower_components/paper-fab/paper-fab.html">
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="bower_components/paper-toast/paper-toast.html">
     <link rel="import" href="post-card.html">
@@ -66,24 +70,14 @@
           <paper-icon-button icon="arrow-back" core-drawer-toggle></paper-icon-button>
         </core-toolbar>
         <core-selector id="drawer" selected="0">
-          <paper-item onclick="toaster('#drawer-toast');">
+          <paper-item onclick="toaster('#drawer-toast');" core-drawer-toggle>
             <core-icon icon="apps"></core-icon>Home</paper-item>
-          <a style="color:black" href="projects/index.html"><paper-item>
-            <core-icon icon="track-changes"></core-icon>Projects</paper-item></a>
-          <a style="color:black" href="publications/index.html"><paper-item>
-            <core-icon icon="bookmark"></core-icon>Publications</paper-item></a>
+          <paper-item><core-icon icon="track-changes"></core-icon>
+            <a style="color:black" href="projects/index.html">Projects</a></paper-item>
+          <paper-item><core-icon icon="bookmark"></core-icon>
+            <a style="color:black" href="publications/index.html">Publications</a></paper-item>
           <paper-item onclick="dialogue('#files-dialog');" core-drawer-toggle>
             <core-icon icon="folder"></core-icon>Files</paper-item>
-          <!-- Commenting out drawer elements corresponding to pages
-          <paper-item onclick="turnPage(0);" core-drawer-toggle>
-          <core-icon icon="account-circle"></core-icon>About</paper-item>
-          <paper-item onclick="turnPage(1);" core-drawer-toggle>
-          <core-icon icon="question-answer"></core-icon>Contact</paper-item>
-          <paper-item onclick="turnPage(2);" core-drawer-toggle>
-          <core-icon icon="folder"></core-icon>Projects</paper-item>
-          -->
-         <paper-item class="pseudo-link" onclick="dialogue('#git-dialog');" core-drawer-toggle>
-            <core-icon icon="extension"></core-icon>Source</paper-item>
         </core-selector>
       </core-header-panel>
   
@@ -91,6 +85,17 @@
         <core-toolbar class="medium-tall">
         <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
         <span flex>August Valera</span>
+        <paper-menu-button>
+            <paper-icon-button icon="more-vert" noink></paper-icon-button>
+            <paper-dropdown halign="right" class="dropdown">
+                <core-menu class="menu">
+                    <paper-item onclick="dialogue('#about-dialog');">
+                      <core-icon icon="info"></core-icon>About</paper-item>
+                    <paper-item onclick="dialogue('#git-dialog');">
+                      <core-icon icon="extension"></core-icon>Source</paper-item>
+                </core-menu>
+            </paper-dropdown>
+        </paper-menu-button>
         <div class="bottom fit" horizontal layout>
           <paper-tabs id="tabs" selected="0" flex horizontal center layout>
              <paper-tab name="about" onclick="turnPage(0);">About</paper-tab>
@@ -109,7 +114,7 @@
                 <post-card>
                   <div itemscope itemtype="http://schema.org/Person">
                     <p>
-                      I'm <strong class="pseudo-link" onclick="toaster('#name-toast');";><span itemprop="name">August Valera</span></strong>, a second year <span itemprop="jobTitle">student</span> at <span itemprop="worksFor">UCSC</span> in <span itemprop="workLocation">Santa Cruz, CA</span>.
+                      I'm <strong class="pseudo-link"><span itemprop="name">August Valera</span></strong>, a second year <span itemprop="jobTitle">student</span> at <span itemprop="worksFor">UCSC</span> in <span itemprop="workLocation">Santa Cruz, CA</span>.
                       I am interested in tech innovations, user inteface design, and Android development. 
                       My hobbies are coding, watching anime, and playing tennis.
                     </p>
@@ -128,15 +133,6 @@
                       </ul>
                     </li>
                   </ul>
-                </post-card>
-                <post-card>
-                  <core-icon icon="polymer"></core-icon>
-                  <h4>This Site</h4>
-                  <p>I am currently learning HTML/CSS/JS/jQ, so this site is some good practice.</p>
-                  <p>It is hosted on <a href="http://4U6U57.github.io" rel="alternate">GitHub Pages</a> (github.io), and is mirrored on the <a href="http://people.ucsc.edu/~avalera" rel="alternate">UCSC public server</a> (people.ucsc.edu).</p>
-                  <p>The project is completely open source, and the <span class="pseudo-link" onclick="dialogue('#git-dialog');">source code</span> (github.com) is made available to the public.</p>
-                  <p>It is primarily built on web components published by the <a href="https://www.polymer-project.org">Polymer Project</a> (Google I/O 2014).</p>
-                  <a href="projects/index.html" style="color:black;"><paper-button raised>Other Projects</paper-button></a>
                 </post-card>
               </div>
             </section>
@@ -356,13 +352,20 @@
       </core-header-panel>
 
     </core-drawer-panel>
-    <paper-toast id="drawer-toast" text="You are currently on this page."></paper-toast>
+    <paper-toast id="drawer-toast" text="You are currently on this page." onclick="turnPage(5); toaster('#test-toast');"></paper-toast>
     <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed here to anyone, as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
-    <paper-toast id="name-toast" text="#YOLOSWAG" onclick="turnPage(5); toaster('#test-toast');"></paper-toast>
     <paper-dialog id="git-dialog" heading="Source Code" transition="paper-dialog-transition-bottom">
       <p>You are about to view the source code of this site. This is hosted on an external domain (github.com).</p>
       <!-- <paper-button onclick="document.querySelector('#git-dialog').close();" dismissive>Cancel</paper-button> Cannot figure out cancel.-->
       <a href="http://github.com/4U6U57/4U6U57.github.io.git"><paper-button affirmative default>GitHub repo</paper-button></a>
+    </paper-dialog>
+    <paper-dialog id="about-dialog" heading="About This Site" transition="paper-dialog-transition-bottom">
+      <p>
+        I am currently learning HTML/CSS/JS/jQ, so building this site has been some good practice. It is hosted on <a href="http://4U6U57.github.io" rel="alternate">GitHub Pages</a> (github.io), and is mirrored on the <a href="http://people.ucsc.edu/~avalera" rel="alternate">UCSC public server</a> (people.ucsc.edu). The project is completely open source, and the <span class="pseudo-link" onclick="dialogue('#git-dialog');">source code</span> (github.com) is made available to the public. It is primarily built on web components published by the <a href="https://www.polymer-project.org">Polymer Project</a> (Google I/O 2014).
+      </p>
+      <p>Some more projects that I have been working on can be found in Projects. To demo Polymer elements, go to Paper Elements.</p>
+      <a href="projects/index.html" style="color:black;"><paper-button raised>Projects</paper-button></a>
+      <a href="bower_components/paper-elements/demo.html" style="color:black;"><paper-button raised>Paper Elements</paper-button></a>
     </paper-dialog>
     <paper-dialog id="files-dialog" heading="File Storage" transition="paper-dialog-transition-bottom">
       <p>The file storage system is located on the UCSC domain (people.ucsc.edu), and operates under Apache share.</p>
