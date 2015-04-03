@@ -72,10 +72,10 @@
         <core-selector id="drawer" selected="0">
           <paper-item onclick="toaster('#drawer-toast');" core-drawer-toggle>
             <core-icon icon="apps"></core-icon>Home</paper-item>
-          <a style="color:black" href="projects/index.html"><paper-item>
-            <core-icon icon="track-changes"></core-icon>Projects</paper-item></a>
-          <a style="color:black" href="publications/index.html"><paper-item>
-            <core-icon icon="bookmark"></core-icon>Publications</paper-item></a>
+          <paper-item><core-icon icon="track-changes"></core-icon>
+            <a style="color:black" href="projects/index.html">Projects</a></paper-item>
+          <paper-item><core-icon icon="bookmark"></core-icon>
+            <a style="color:black" href="publications/index.html">Publications</a></paper-item>
           <paper-item onclick="dialogue('#files-dialog');" core-drawer-toggle>
             <core-icon icon="folder"></core-icon>Files</paper-item>
         </core-selector>
