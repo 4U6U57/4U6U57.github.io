@@ -12,6 +12,18 @@ body {
   -webkit-touch-callout: none;
 }
 
+#photo {
+  padding-right:2.5em;
+  position:relative;
+  float:right;
+}
+
+#photo img {
+  height:5em;
+  width:5em;
+  border-radius:100%;
+}
+
 h3 {
   font-family: RobotoDraft, sans-serif;
   color: black;
