@@ -112,7 +112,8 @@
               <div>
                 <h3>About</h3>
                 <post-card>
-                  <img style="width:20%;border-radius:100%;" src="https://lh3.googleusercontent.com/-4XCi5FfO1gY/T4uTpCRkTGI/AAAAAAAALsY/eAcmUJHxi-o/w360-h361-no/374018_1887740732087_1798516501_1230180_674331486_n.jpg">
+                  <img style="width:20%;border-radius:100%;" 
+                  src="https://lh3.googleusercontent.com/-4XCi5FfO1gY/T4uTpCRkTGI/AAAAAAAALsY/eAcmUJHxi-o/w360-h361-no/374018_1887740732087_1798516501_1230180_674331486_n.jpg">
                   <div itemscope itemtype="http://schema.org/Person">
                     <p>
                       I'm <strong class="pseudo-link"><span itemprop="name">August Valera</span></strong>, a second year <span itemprop="jobTitle">student</span> at <span itemprop="worksFor">UCSC</span> in <span itemprop="workLocation">Santa Cruz, CA</span>.
@@ -138,12 +139,19 @@
                 <post-card>
                   <core-icon icon="social:domain"></core-icon>
                   <h4>Employment</h4>
-                  <p>I am currently working as a <em>tutor</em> for <a href="https://classes.soe.ucsc.edu/cmps012b/Spring15/">CMPS 12B</a> under Patrick Tantalo.</p>
-                  <p>My lab sections are as follows: </p>
+                  <p>I am currently working as a <em>tutor</em> for <strong>CMPS 12B/M</strong> under Patrick Tantalo.</p>
                   <ul>
-                    <li><em>(sections coming soon)</em></li>
+                    <li>My lab section is on <strong>Thursdays</strong> from <strong>10:00 to 12:00</strong> at <strong>J Baskin 105</strong>.</li>
+                    <li>In addition, I will also be grading approximately half of the programming assignments, specifically, the design portion.</li>
                   </ul>
-                  <p>In addition, I will also be grading approximately half of the programming assignments. For more information on that, see <a href="https://piazza.com/ucsc/spring2015/cmps12b/home">Piazza</a>.</p>
+                  <p>
+                    Any concerns in regards to CMPS 12B/M can be made through Piazza, or for more personal matters, 
+                    through emails to <a href="mailto:avalera@ucsc.edu?subject=%5BCMPS%2012B%2FM%5D%20(Descriptive%20subject)
+                    &amp;body=Hey%20August%2C%0A%0A(What%20you%20want%20to%20talk%20about)%0A%0AThanks%2C%0A%0A--%0A(Your%20name)%0A(Your%20CruzID)">avalera@ucsc.edu</a>.
+                    Below is some more information relevant to the class.
+                  </p>
+                  <a href="https://classes.soe.ucsc.edu/cmps012b/Spring15/" style="color:rgb(166, 157, 216)"><paper-button class="colored">Course Website</paper-button></a>
+                  <a href="https://piazza.com/ucsc/spring2015/cmps12b/home/" style="color:#3e7aab"><paper-button class="colored">Piazza</paper-button></a>
                 </post-card>
               </div>
             </section>
@@ -364,7 +372,8 @@
 
     </core-drawer-panel>
     <paper-toast id="drawer-toast" text="You are currently on this page." onclick="turnPage(5); toaster('#test-toast');"></paper-toast>
-    <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed here to anyone, as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
+    <paper-toast id="test-toast" text="You have discovered a testing section. You are not to disclose of the information displayed here to anyone, 
+    as per the United States National Defence Authorization Act (H.R. 3304). Failure to do so is punishable by law."></paper-toast>
     <paper-dialog id="git-dialog" heading="Source Code" transition="paper-dialog-transition-bottom">
       <p>You are about to view the source code of this site. This is hosted on an external domain (github.com).</p>
       <!-- <paper-button onclick="document.querySelector('#git-dialog').close();" dismissive>Cancel</paper-button> Cannot figure out cancel.-->
@@ -372,7 +381,12 @@
     </paper-dialog>
     <paper-dialog id="about-dialog" heading="About This Site" transition="paper-dialog-transition-bottom">
       <p>
-        I am currently learning HTML/CSS/JS/jQ, so building this site has been some good practice. It is hosted on <a href="http://4U6U57.github.io" rel="alternate">GitHub Pages</a> (github.io), and is mirrored on the <a href="http://people.ucsc.edu/~avalera" rel="alternate">UCSC public server</a> (people.ucsc.edu). The project is completely open source, and the <span class="pseudo-link" onclick="dialogue('#git-dialog');">source code</span> (github.com) is made available to the public. It is primarily built on web components published by the <a href="https://www.polymer-project.org">Polymer Project</a> (Google I/O 2014).
+        I am currently learning HTML/CSS/JS/jQ, so building this site has been some good practice. 
+        It is hosted on <a href="http://4U6U57.github.io" rel="alternate">GitHub Pages</a> (github.io), 
+        and is mirrored on the <a href="http://people.ucsc.edu/~avalera" rel="alternate">UCSC public server</a> 
+        (people.ucsc.edu). The project is completely open source, and the <span class="pseudo-link" onclick="dialogue('#git-dialog');">
+          source code</span> (github.com) is made available to the public. It is primarily built on web components published by the 
+          <a href="https://www.polymer-project.org">Polymer Project</a> (Google I/O 2014).
       </p>
       <p>Some more projects that I have been working on can be found in Projects. To demo Polymer elements, go to Paper Elements.</p>
       <a href="projects/index.html" style="color:black;"><paper-button raised>Projects</paper-button></a>
