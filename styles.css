@@ -39,7 +39,7 @@ h4 {
 }
 
 section {
-  margin: 20px;
+  margin: 2em;
 }
 
 a, .pseudo-link {
@@ -146,7 +146,7 @@ paper-toast {
   background-color: white;
   color: black;
   outline: none; 
-  right: 30px;
+  right: 3em;
   left: auto;
   box-sizing: border-box;
   max-width: 300px;

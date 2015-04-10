@@ -53,15 +53,15 @@
         <post-card>
           <h4>2014</h4>
           <post-paper itemscope itemtype="http://schema.org/Article">
-            <p><span itemprop="author">A. Valera</span>. <strong itemprop="name">A Physical Implementation of Transactions with Cryptographic Currency</strong>. <em>Intro to Networking (CMPE 150), UCSC</em>. <span itemprop="datePublished">2014</span>.</p>
-            <a itemprop="sameAs" href="ucsc-cmpe-150.pdf"><paper-button class="colored">PDF</paper-button></a>
+            <p flex><span itemprop="author">A. Valera</span>. <strong itemprop="name">A Physical Implementation of Transactions with Cryptographic Currency</strong>. <em>Intro to Networking (CMPE 150), UCSC</em>. <span itemprop="datePublished">2014</span>.</p>
+            <a itemprop="sameAs" href="ucsc-cmpe-150.pdf"><paper-button affirmative class="colored">PDF</paper-button></a>
           </post-paper>
         </post-card>
         <post-card>
           <h4>2013</h4>
           <post-paper itemscope itemtype="http://schema.org/Article">
-            <p><span itemprop="author">A. Valera</span>. <strong itemprop="name">The State of Surveillance: A Case Study on the Present and Future of Government Surveillance</strong>. <em>Crown College Core Course (CRWN 80B), UCSC</em>. <span itemprop="datePublished">2013</span>.</p>
-            <a itemprop="sameAs" href="ucsc-crwn-80b.pdf"><paper-button class="colored">PDF</paper-button></a>
+            <p flex><span itemprop="author">A. Valera</span>. <strong itemprop="name">The State of Surveillance: A Case Study on the Present and Future of Government Surveillance</strong>. <em>Crown College Core Course (CRWN 80B), UCSC</em>. <span itemprop="datePublished">2013</span>.</p>
+            <a itemprop="sameAs" href="ucsc-crwn-80b.pdf"><paper-button affirmative class="colored">PDF</paper-button></a>
           </post-paper>
         </post-card>
       </section>
@@ -72,21 +72,18 @@
         :host {
           display: block;
           position: relative;
-          padding: 0px;
-          width: 100%;
-          margin-bottom: -15px;
+          margin-bottom: -1em;
+          margin-right: -1em;
         }
         .paper-header {
         }
         polyfill-next-selector { content: '.paper-header p'; }
-        .card-header ::content h4 {
-          margin: 0;
+        .paper-header ::content h4 {
+          margin-right:2em;
         }
         polyfill-next-selector { content: '.paper-header a'; }
-        .card-header ::content a paper-button {
+        .paper-header ::content a paper-button {
           color: #E65100;
-          float: right;
-          margin-left: 8px;
         }
         </style>
     
