@@ -313,8 +313,6 @@ class Website {
         :host {
           display: block;
           position: relative;
-          margin-bottom: -1em;
-          margin-right: -1em;
         }
         </style>
     
@@ -339,8 +337,6 @@ class Website {
         :host {
           display: block;
           position: relative;
-          margin-bottom: -1em;
-          margin-right: -1em;
         }
         post-card {
           background-color:#fff9c4;
@@ -377,26 +373,6 @@ class Website {
       function nextPage() {
         turnPage(document.querySelector('#pages').selected + 1);
       }
-    </script>
-    <script>
-      var $allVideos = $("iframe[src^='//www.youtube.com']"),
-          $fluidEl = $("body");
-      $allVideos.each(function() {
-        $(this)
-          .data('aspectRatio', this.height / this.width)
-          .removeAttr('height')
-          .removeAttr('width');
-      });
-      $(window).resize(function() {
-        var newWidth = $fluidEl.width();
-        $allVideos.each(function() {
-          var $el = $(this);
-          $el
-            .width(newWidth)
-            .height(newWidth * $el.data('aspectRatio'));
-      
-        });
-      }).resize();
     </script>
   </body>
 </html>
