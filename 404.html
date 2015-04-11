@@ -3,6 +3,34 @@
 <html>
   <head>
     <title>Error - August Valera</title>
+    
+    <!--
+    What the fuck did you just fucking type about me, you little bitch? 
+    I’ll have you know I graduated top of my class at MIT, 
+    and I’ve been involved in numerous secret raids with Anonymous, 
+    and I have over 300 confirmed DDoSes. 
+    I am trained in online trolling and I’m the top hacker in the entire world. 
+    You are nothing to me but just another virus host. 
+    I will wipe you the fuck out with precision 
+    the likes of which has never been seen before on the Internet, 
+    mark my fucking words. 
+    You think you can get away with typing that shit to me over the Internet? T
+    hink again, fucker. 
+    As we chat over IRC I am tracing your IP with my damn bare hands 
+    so you better prepare for the storm, maggot. 
+    The storm that wipes out the pathetic little thing you call your computer. 
+    You’re fucking dead, kid. 
+    I can be anywhere, anytime, and I can hack into your files in over seven hundred ways, 
+    and that’s just with my bare hands. 
+    Not only am I extensively trained in hacking, 
+    but I have access to the entire arsenal of every piece of malware ever created 
+    and I will use it to its full extent to wipe your miserable ass 
+    off the face of the world wide web, you little shit. 
+    f only you could have known what unholy retribution your little “clever” comment 
+    was about to bring down upon you, maybe you would have held your fucking fingers. 
+    But you couldn’t, you didn’t, and now you’re paying the price, you goddamn idiot. 
+    I will shit code all over you and you will drown in it. You’re fucking dead, kiddo.
+    -->
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
@@ -13,7 +41,7 @@
     <link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
     <link rel="import" href="bower_components/core-icons/core-icons.html">
     <link rel="import" href="bower_components/core-icons/social-icons.html">
-    <link rel="import" href="bower_components/core-icons/maps-icons.html">
+    <link rel="import" href="bower_components/core-icons/av-icons.html">
     <link rel="import" href="bower_components/core-menu/core-menu.html">
     <link rel="import" href="bower_components/core-menu/core-submenu.html">
     <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
@@ -35,42 +63,71 @@
 
   <body unresolved>
   
-    <core-header-panel> <!--mode="waterfall-tall"-->
+    <core-header-panel mode="waterfall-tall">
       <core-toolbar>
         <a style="color:white" href="index.html"><paper-icon-button icon="arrow-back"></paper-icon-button></a>
         <span flex>August Valera</span>
       </core-toolbar>
     
       <div class="content">
-        <core-animated-pages id="404_pages" selected="0">
+        <core-animated-pages id="pages" selected="0">
           <section class="container">
             <div>
-              <h3 onclick="turnPage(1);">Error</h3>
+              <h3 onclick="nextPage();">404</h3>
+              <post-404></post-404>
+            </div>
+          </section>
+          <section class="container">
+            <div>
+              <h3>404</h3>
+              <post-404></post-404>
               <post-card>
-              <core-icon icon="warning"></core-icon>
-                <h4>Resource Not Found</h4>
+                <core-icon icon="search"></core-icon>
+                <h4>Extras</h4>
+                <p>You did it. You found out how to access the fun stuff. Congrats.</p>
                 <p>
-                  The page you are looking for does not exist. It has either been purged from the system, or it never existed in the first place. Either way, you're better off pretending that you haven't tried to access it. Otherwise, you might find some friendly people at your doorstep asking you questions about this.
+                  <strong>Note</strong>: Any of the following pages were created solely for the point of recreation,
+                  and have no redeeming value whatsoever. Viewer discretion is advised.
                 </p>
-                <p>
-                  Remember, we never had this conversation. ;p
-                </p>
-                <a style="color:black" href="index.html"><paper-button raised role="button">Back to home<paper-button></a>
+                <paper-button raised onclick="nextPage();">Extra Pages</paper-button>
               </post-card>
             </div>
           </section>
           <section class="container">
             <div>
-              <h3>Test Page</h3>
+              <h3>Extras</h3>
               <post-card>
-                <core-icon icon="report"></core-icon>
-                <h4>Site Testing</h4>
-                <p>This area is not meant to be viewed by the general public.</p>
-                <p>Please disregard the content of this page.</p>
-                <paper-button raised onclick="turnPage(0);">Back to Home</paper-button>
+                <p>
+                  Below is an incomplete list of the random stuff I have included in this page. 
+                  Free free to look around, but don't get 
+                  <em onmouseover="link('https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1');">too</em>
+                  nosey.
+                  I can't guarantee your safety otherwise.
+                </p>
               </post-card>
               <post-card>
-                <h4>Welcome</h4>
+                <h4>Pages</h4>
+                <core-menu class="menu">
+                  <paper-item onclick="turnPage(3);">
+                    <core-icon icon="av:play-circle-outline"></core-icon>Zombocom</paper-item>
+                </core-menu>
+              </post-card>
+            </div>
+          </section>
+          <!-- Starting here is page 3 -->
+          <section class="container">
+            <div>
+              <h3>The Only Limit is Yourself</h3>
+              <post-card>
+                <core-icon icon="av:movie"></core-icon>
+                <h4>Media</h4>
+                <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/mjMLbb-RaRI" 
+                frameborder="0" allowfullscreen></iframe>
+              </post-card>
+              <post-card>
+                <core-icon icon="receipt"></core-icon>
+                <h4>Transcript</h4>
                 <ul>
                   <li>Welcome to Zombocom.</li>
                   <li>This is Zombocom.</li>
@@ -98,6 +155,20 @@
                   <a href="http://zombo.com"><paper-button class="colored">Visit Zombocom</paper-button></a>
                 </ul>
               </post-card>
+              <post-extras>
+                <p>
+                  However, this specific page is an exception to that rule,
+                  as it gives an important message, <em>that anything is possible, 
+                  and the only limit is yourself</em>.
+                </p>
+                <p>
+                  So on behalf of myself, August Valera, welcome to Zombocom.
+                </p>
+              </post-extras>
+            </div>
+          </section>
+          <section class="container">
+            <div>
               <post-card>
                 <core-icon icon="social:school"></core-icon>
                 <h4>Qualifications</h4>
@@ -189,11 +260,78 @@
           </section>
         </core-animated-pages>
       </div>
+      <polymer-element name="post-404">
+      <template>
+        <style>
+        :host {
+          display: block;
+          position: relative;
+          margin-bottom: -1em;
+          margin-right: -1em;
+        }
+        </style>
+    
+        <post-card>
+          <core-icon icon="warning"></core-icon>
+          <h4>Resource Not Found</h4>
+          <p>
+            The page you are looking for does not <em style="color:gray">(currently)</em> exist.
+            Try checking that you typed the URL correctly.
+          </p>
+          <p>
+            It also might be that the page you are trying to reference has been removed.
+            If that is the case, I would suggest forgetting that it ever existed.
+          </p>
+          <content></content>
+          <a href="index.html" style="color:black"><paper-button raised>Back to Index</paper-button></a>
+        </post-card>
+      </template>
+      <script>
+      Polymer({
+        publish: {
+        },
+      });
+      </script>
+    </polymer-element>
+    <polymer-element name="post-extras">
+      <template>
+        <style>
+        :host {
+          display: block;
+          position: relative;
+          margin-bottom: -1em;
+          margin-right: -1em;
+        }
+        </style>
+    
+        <post-card>
+          <core-icon icon="search"></core-icon>
+          <h4>Extras</h4>
+          <p>
+            <strong>This page is an extra</strong>, meaning, it is not part of the main site.
+            In general, you should <strong>disregard any extra page</strong>,
+            as it most likely contains misinformation/stupid crap that I decided to add in for fun.
+          </p>
+          <content></content>
+          <paper-button raised onclick="turnPage(2);">Back to Extras</paper-button>
+        </post-card>
+      </template>
+      <script>
+      Polymer({
+        publish: {
+        },
+      });
+      </script>
+    </polymer-element>
+      
     </core-header-panel>
     <script src="main.js"></script>
     <script>
       function turnPage(pageNum) {
-        document.querySelector('#404_pages').selected = pageNum;
+        document.querySelector('#pages').selected = pageNum;
+      }
+      function nextPage() {
+        turnPage(document.querySelector('#pages').selected + 1);
       }
     </script>
   </body>
