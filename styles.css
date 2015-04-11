@@ -12,17 +12,18 @@ body {
   -webkit-touch-callout: none;
 }
 
-#photo {
-  width:100%;
-  position:relative;
-  float:right;
+pre {
+  white-space: pre-wrap;
+    
+  background-color: #EEEEEE;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  margin-bottom: 10px;
+  overflow: auto;
+  padding: 5px;
+  width: auto;
 }
 
-#photo img {
-  height:5em;
-  width:5em;
-  border-radius:100%;
-}
+  
 
 h3 {
   font-family: RobotoDraft, sans-serif;

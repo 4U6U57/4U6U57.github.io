@@ -58,9 +58,7 @@
     <link rel="import" href="bower_components/paper-toast/paper-toast.html">
     <link rel="import" href="post-card.html">
   
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.5/styles/default.min.css">
-    <script src="//cdn.jsdelivr.net/highlight.js/8.5/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -116,57 +114,54 @@
               <post-card>
                 <core-icon icon="reciept"></core-icon>
                 <h4>Source</h4>
-                <pre><code class="java">
-                  class Website {
-                    public static void main(String[] args) {
-                    boolean onSite = true;
-                      while(onSite) {
-                        if(args.length > 0) {
-                          String request = args[0];
-                          if(request.substring(0,23).equals("people.ucsc.edu/~avalera") || 
-                          request.substring(0, 15).equals("avalera.argus.tk")) {
-                            try {
-                              find
-                            } catch(FileNotFoundException) {
-                              Scanner scan = new Scanner(System.user);
-                              error404(scan);
-                            }
-                          }
-                          else onSite = false;
-                        }
-                      }
-                    }
-                    public void error<span onclick="turnPage(0);">404</span>(Scanner scan) {
-                      boolean keepLoop = true;
-                      while(keepLooping) {
-                        Status state = scan.nextLine();
-                        switch(state) {
-                          case "confused":
-                            System.out.println("It's not there. That's it. 
-                            You're going to have to go somewhere else.");
-                            error404(scan);
-                            break;
-                          case "angry":
-                            System.out.println("Getting angry won't change anything. Chill.");
-                            break;
-                          case "depressed":
-                            System.out.println("I know how much you wanted to see that page, but it's gone. 
-                            There's nothing you can do to bring it back. Life moves on.");
-                            break;
-                          default:
-                            System.user.click(findButtonById("Back to Index"));
-                            keepLooping = false;
-                            break;
-                        }
-                      }
-                    }
-                  }
-                </code></pre>
+                <pre class="prettyprint">
+class Website {
+  public static void main(String[] args) {
+  boolean onSite = true;
+    while(onSite) {
+      if(args.length > 0) {
+        String request = args[0];
+        if(request.substring(0,23).equals("people.ucsc.edu/~avalera") || request.substring(0,15).equals("avalera.argus.tk")) {
+          try {
+            find
+          } catch(FileNotFoundException) {
+            Scanner scan = new Scanner(System.user);
+            error404(scan);
+          }
+        }
+        else onSite = false;
+      }
+    }
+  }
+  public void error<span onclick="turnPage(0);">404</span>(Scanner scan) {
+    boolean keepLoop = true;
+    while(keepLooping) {
+      Status state = scan.nextLine();
+      switch(state) {
+        case "confused":
+          System.out.println("It's not there. That's it. You're going to have to go somewhere else.");
+          error404(scan);
+          break;
+        case "angry":
+          System.out.println("Getting angry won't change anything. Chill.");
+          break;
+        case "depressed":
+          System.out.println("I know how much you wanted to see that page, but it's gone. There's nothing you can do to bring it back. Life moves on.");
+          break;
+        default:
+          System.user.click(findButtonById("Back to Index"));
+          keepLooping = false;
+          break;
+      }
+    }
+  }
+}
+                </pre>
               </post-card>
             </div>
           </section>
           
-          <!-- Starting here is page 4 -->
+          <!-- Starting here is page 3 -->
           <section class="container">
             <div>
               <h3>The Only Limit is Yourself</h3>
