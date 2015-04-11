@@ -58,6 +58,10 @@
     <link rel="import" href="bower_components/paper-toast/paper-toast.html">
     <link rel="import" href="post-card.html">
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.5/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/highlight.js/8.5/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
     <link rel="stylesheet" href="styles.css">
   </head>
 
@@ -70,35 +74,19 @@
       </core-toolbar>
     
       <div class="content">
-        <core-animated-pages id="pages" selected="0">
-          <section class="container">
-            <div>
-              <h3 onclick="nextPage();">404</h3>
-              <post-404></post-404>
-            </div>
-          </section>
+        <core-animated-pages id="pages" selected="1">
           <section class="container">
             <div>
               <h3>404</h3>
-              <post-404></post-404>
-              <post-card>
+              <post-card style="background-color:#fff9c4">
                 <core-icon icon="search"></core-icon>
                 <h4>Extras</h4>
-                <p>You did it. You found out how to access the fun stuff. Congrats.</p>
                 <p>
-                  <strong>Note</strong>: Any of the following pages were created solely for the point of recreation,
-                  and have no redeeming value whatsoever. Viewer discretion is advised.
+                  You did it. You found the page that I didn't intend to find. Good job.
+                  This is where I keep all my extra stuff. Pages for testing interfaces,
+                  random crap that I thought would be funny, etc.
                 </p>
-                <paper-button raised onclick="nextPage();">Extra Pages</paper-button>
-              </post-card>
-            </div>
-          </section>
-          <section class="container">
-            <div>
-              <h3>Extras</h3>
-              <post-card>
                 <p>
-                  Below is an incomplete list of the random stuff I have included in this page. 
                   Free free to look around, but don't get 
                   <em onmouseover="link('https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1');">too</em>
                   nosey.
@@ -114,14 +102,78 @@
               </post-card>
             </div>
           </section>
-          <!-- Starting here is page 3 -->
+          <!-- Section 1 (below) is default -->
+          <section class="container">
+            <div>
+              <h3 onclick="nextPage();">404</h3>
+              <post-404></post-404>
+            </div>
+          </section>
+          <section class="container">
+            <div>
+              <h3>404</h3>
+              <post-404></post-404>
+              <post-card>
+                <core-icon icon="reciept"></core-icon>
+                <h4>Source</h4>
+                <pre><code class="java">
+                  class Website {
+                    public static void main(String[] args) {
+                    boolean onSite = true;
+                      while(onSite) {
+                        if(args.length > 0) {
+                          String request = args[0];
+                          if(request.substring(0,23).equals("people.ucsc.edu/~avalera") || 
+                          request.substring(0, 15).equals("avalera.argus.tk")) {
+                            try {
+                              find
+                            } catch(FileNotFoundException) {
+                              Scanner scan = new Scanner(System.user);
+                              error404(scan);
+                            }
+                          }
+                          else onSite = false;
+                        }
+                      }
+                    }
+                    public void error<span onclick="turnPage(0);">404</span>(Scanner scan) {
+                      boolean keepLoop = true;
+                      while(keepLooping) {
+                        Status state = scan.nextLine();
+                        switch(state) {
+                          case "confused":
+                            System.out.println("It's not there. That's it. 
+                            You're going to have to go somewhere else.");
+                            error404(scan);
+                            break;
+                          case "angry":
+                            System.out.println("Getting angry won't change anything. Chill.");
+                            break;
+                          case "depressed":
+                            System.out.println("I know how much you wanted to see that page, but it's gone. 
+                            There's nothing you can do to bring it back. Life moves on.");
+                            break;
+                          default:
+                            System.user.click(findButtonById("Back to Index"));
+                            keepLooping = false;
+                            break;
+                        }
+                      }
+                    }
+                  }
+                </code></pre>
+              </post-card>
+            </div>
+          </section>
+          
+          <!-- Starting here is page 4 -->
           <section class="container">
             <div>
               <h3>The Only Limit is Yourself</h3>
               <post-card>
                 <core-icon icon="av:movie"></core-icon>
                 <h4>Media</h4>
-                <iframe width="560" height="315" 
+                <iframe width="640" height="360" 
                 src="https://www.youtube.com/embed/mjMLbb-RaRI" 
                 frameborder="0" allowfullscreen></iframe>
               </post-card>
@@ -274,16 +326,9 @@
         <post-card>
           <core-icon icon="warning"></core-icon>
           <h4>Resource Not Found</h4>
-          <p>
-            The page you are looking for does not <em style="color:gray">(currently)</em> exist.
-            Try checking that you typed the URL correctly.
-          </p>
-          <p>
-            It also might be that the page you are trying to reference has been removed.
-            If that is the case, I would suggest forgetting that it ever existed.
-          </p>
-          <content></content>
+          <p>Sorry, the page you are trying to reference is not available.</p>
           <a href="index.html" style="color:black"><paper-button raised>Back to Index</paper-button></a>
+          <content></content>
         </post-card>
       </template>
       <script>
@@ -302,6 +347,9 @@
           margin-bottom: -1em;
           margin-right: -1em;
         }
+        post-card {
+          background-color:#fff9c4;
+        }
         </style>
     
         <post-card>
@@ -313,7 +361,7 @@
             as it most likely contains misinformation/stupid crap that I decided to add in for fun.
           </p>
           <content></content>
-          <paper-button raised onclick="turnPage(2);">Back to Extras</paper-button>
+          <paper-button raised onclick="turnPage(0);">Back to Extras</paper-button>
         </post-card>
       </template>
       <script>
@@ -326,6 +374,7 @@
       
     </core-header-panel>
     <script src="main.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script>
       function turnPage(pageNum) {
         document.querySelector('#pages').selected = pageNum;
@@ -333,6 +382,26 @@
       function nextPage() {
         turnPage(document.querySelector('#pages').selected + 1);
       }
+    </script>
+    <script>
+      var $allVideos = $("iframe[src^='//www.youtube.com']"),
+          $fluidEl = $("body");
+      $allVideos.each(function() {
+        $(this)
+          .data('aspectRatio', this.height / this.width)
+          .removeAttr('height')
+          .removeAttr('width');
+      });
+      $(window).resize(function() {
+        var newWidth = $fluidEl.width();
+        $allVideos.each(function() {
+          var $el = $(this);
+          $el
+            .width(newWidth)
+            .height(newWidth * $el.data('aspectRatio'));
+      
+        });
+      }).resize();
     </script>
   </body>
 </html>
