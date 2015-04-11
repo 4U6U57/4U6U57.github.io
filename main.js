@@ -1,7 +1,4 @@
-function turnPage(pageNum) {
-  document.querySelector('#pages').selected = pageNum;
-  document.querySelector('#tabs').selected = pageNum;
-}
+
 function toaster(id) {
   document.querySelector(id).show();
 }
