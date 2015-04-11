@@ -1,2 +1,1 @@
-ErrorDocument 404 http://people.ucsc.edu/~avalera/.error.html
-
+ErrorDocument 404 http://people.ucsc.edu/~avalera/404.html
