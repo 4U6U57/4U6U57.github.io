@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Projects Beta - August Valera</title>
+    <title>Projects - August Valera</title>
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
@@ -222,5 +222,13 @@
         <a href="http://people.ucsc.edu/~avalera/files" style="color:#F1B521"><paper-button>UCSC Public Hosting</paper-button></a>
       </paper-dialog>
     <script src="../main.js"></script>
+    <script>
+      function turnPage(pageNum) {
+        document.querySelector('#pages').selected = pageNum;
+      }
+      function nextPage() {
+        turnPage(document.querySelector('#pages').selected + 1);
+      }
+    </script>
   </body>
 </html>
