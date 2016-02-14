@@ -13,14 +13,15 @@
       "cards": [
         {
           "contents": [
-            "I'm August Valera, a second year studnet at UC Santa Cruz, California.",
-            "I am interested in tech innovations, user interface and design, Android, front end development, and web.",
-            "My hobbies include coding, watching anime, and participating in student government."
+            "I'm August Valera, a second year studnet at UC Santa Cruz, California. I am interested in tech innovations, user interface and design, Android, front end development, and web. My hobbies include coding, watching anime, and participating in student government.",
             ]
         },
         {
-          "header": "Swag",
-          "contents": ["yolo"]
+          "header": "Education",
+          "contents": [
+            "I graduated from Westmoor High School in Daly City, CA with class of 2013.",
+            "I am currently declared as a Computer Engineering (B.S) major under the Jack Baskins School of Enginnering at University of California, Santa Cruz. I am estimated to graduate in Spring of 2017."
+          ]
         }
       ]
     },
