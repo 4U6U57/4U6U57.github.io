@@ -13,9 +13,9 @@
           <span>{{ index.header }}</span>
         </h2>
         <span flex></span>
-        <md-button aria-label="Bitbucket" href="http://bitbucket.com/4U6U57/website">
-          View source on Bitbucket
-          <md-icon aria-label="track_changes" class="material-icons">track_changes</md-icon>
+        <md-button aria-label="{{ index.source.label }}" href="{{ index.source.link }}">
+          {{ index.source.content }}
+          <md-icon aria-label="{{ index.source.icon }}" class="material-icons">{{ index.source.icon }}</md-icon>
         </md-button>
       </div>
     </md-toolbar>

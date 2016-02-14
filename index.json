@@ -1,5 +1,11 @@
 {
   "header": "August Valera",
+  "source": {
+    "label": "GitHub",
+    "content": "View source on GitHub",
+    "icon": "track_changes",
+    "link": "http://github.com/4U6U57/4U6U57.github.io"
+  }
   "tabs": [
     {
       "label": "Home",
