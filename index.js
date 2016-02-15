@@ -4,14 +4,19 @@ materialApp.config(function($mdThemingProvider) {
     .primaryPalette('deep-orange')
     .accentPalette('red');
 });
-materialApp.controller("IndexCtrl", function($scope, $http) {
-  $scope.index = null;
-  $http.get('index.json')
-    .success(function(data) {
-      $scope.index = data;
-    })
-  .error(function(data, status, error, config) {
-    $scope.contents = null;
-  });
+var firebaseApp = angular.module('FirebaseApp', ['firebase']);
+var firebase = 'https://4U6U57.firebaseio.com/website';
+firebaseApp.factory("indexArray", ['$firebaseArray',
+    function(firebaseArray) {
+      var ref = new Firebase(firebase);
+      return $firebaseArray(ref);
+    }]);
+firebaseApp.controller("IndexCtrl", ['$scope', '$indexArray',
+    function(scope, indexArray) {
+      $scope.index = indexArray;
+    }]);
+firebaseApp.controller("IndexCtrl", function($scope, $firebaseObject) {
+  var ref = new Firebase(firebase);
+  $scope.index = $firebaseObject(ref);
 });
-var app = angular.module('IndexApp', ['MaterialApp']);
+var app = angular.module('IndexApp', ['MaterialApp', 'FirebaseApp']);

@@ -7,58 +7,65 @@
   </head>
   <body ng-app="IndexApp" ng-cloak>
     <div ng-controller="IndexCtrl" ng-cloak>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2>
-          <span>{{ index.header }}</span>
-        </h2>
-        <span flex></span>
-        <md-button aria-label="{{ index.source.label }}" href="..">
-          {{ index.source.content }}
-          <md-icon aria-label="{{ index.source.icon }}" class="material-icons">{{ index.source.icon }}</md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-    <md-content>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>
+            <span>{{ index.header }}</span>
+          </h2>
+          <span flex></span>
+          <md-button aria-label="{{ index.source.label }}" href="{{ index.source.link }}">
+            {{ index.source.content }}
+            <md-icon aria-label="{{ index.source.icon }}" class="material-icons">{{ index.source.icon }}</md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-content>
         <md-tabs md-dynamic-height>
-          
           <md-tab ng-repeat="tab in index.tabs" label="{{ tab.label }}">
-
             <md-content class="md-padding" layout-xs="column" layout="column">
               <md-card ng-repeat="card in tab.cards">
-                <md-card-header ng-if="card.header">
-                  <md-card-header-text>
-                    <span class="md-title">{{ card.header }}</span>
+                <md-card-header ng-if="card.header || card.subhead || card.icon">
+                  <md-card-avatar ng-if="card.icon">
+                    <md-icon aria-label="{{ card.icon }}" class="md-avatar-icon material-icons">
+                      {{ card.icon }}
+                    </md-icon>
+                  </md-card-avatar>
+                  <md-card-header-text ng-if="card.header || card.subhead">
+                    <span ng-if="card.header" class="md-title">{{ card.header }}</span>
+                    <span ng-if="card.subhead" class="md-subhead">{{ card.subhead }}</span>
                   </md-card-header-text>
                 </md-card-header>
                 <md-card-content ng-if="card.contents">
                   <p ng-repeat="content in card.contents">{{ content }}</p>
                 </md-card-content>
+                <md-card-actions ng-if="card.actions" layout="row" layout-align="end center">
+                  <md-button ng-repeat="action in card.actions" aria-label="{{ action.label }}" href="{{ action.link }}">
+                    {{ action.label }}
+                  </md-button>
+                </md-card-actions>
               </md-card>
             </md-content>
-
           </md-tab>
-          
         </md-tabs>
-    </md-content>
-  </div>
+      </md-content>
+    </div>
 
-  <!-- Better libraries, better frameworks, PapaJS -->
+    <!-- Better libraries, better frameworks, PapaJS -->
 
-  <!-- Angular.js Libraries -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <!-- Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
-  <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 
-  <!-- Firebase>
-  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script-->
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
 
-  <!-- Angular Bootstrap -->
-  <script src="index.js"></script>
-</body>
-      </html>
+    <!-- Angular Bootstrap -->
+    <script src="index.js"></script>
+  </body>
+</html>
