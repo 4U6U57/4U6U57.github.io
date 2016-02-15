@@ -22,28 +22,31 @@
       <md-content>
         <md-tabs md-dynamic-height>
           <md-tab ng-repeat="tab in index.tabs" label="{{ tab.label }}">
-            <md-content class="md-padding" layout-xs="column" layout="column">
-              <md-card ng-repeat="card in tab.cards">
-                <md-card-header ng-if="card.header || card.subhead || card.icon">
-                  <md-card-avatar ng-if="card.icon">
-                    <md-icon aria-label="{{ card.icon }}" class="md-avatar-icon material-icons">
-                      {{ card.icon }}
-                    </md-icon>
-                  </md-card-avatar>
-                  <md-card-header-text ng-if="card.header || card.subhead">
-                    <span ng-if="card.header" class="md-title">{{ card.header }}</span>
-                    <span ng-if="card.subhead" class="md-subhead">{{ card.subhead }}</span>
-                  </md-card-header-text>
-                </md-card-header>
-                <md-card-content ng-if="card.contents">
-                  <p ng-repeat="content in card.contents">{{ content }}</p>
-                </md-card-content>
-                <md-card-actions ng-if="card.actions" layout="row" layout-align="end center">
-                  <md-button ng-repeat="action in card.actions" aria-label="{{ action.label }}" href="{{ action.link }}">
-                    {{ action.label }}
-                  </md-button>
-                </md-card-actions>
-              </md-card>
+            <md-content class="md-padding" layout-xs="column" layout="row">
+              <div flex-xs flex-gt-xs="column" layout="column">
+                <md-card ng-repeat="card in tab.cards">
+                  <md-card-header ng-if="card.header || card.subhead || card.icon">
+                    <md-card-avatar ng-if="card.icon">
+                      <md-icon aria-label="{{ card.icon }}" class="md-avatar-icon material-icons">
+                        {{ card.icon }}
+                      </md-icon>
+                    </md-card-avatar>
+                    <md-card-header-text ng-if="card.header || card.subhead">
+                      <span ng-if="card.header" class="md-title">{{ card.header }}</span>
+                      <span ng-if="card.subhead" class="md-subhead">{{ card.subhead }}</span>
+                    </md-card-header-text>
+                  </md-card-header>
+                  <md-card-content ng-if="card.contents">
+                    <p ng-repeat="content in card.contents">{{ content }}</p>
+                  </md-card-content>
+                  <md-card-actions ng-if="card.actions" layout="row" layout-align="end center">
+                    <md-button class="md-accent" ng-repeat="action in card.actions | orderBy:'label'" aria-label="{{ action.label }}"
+                      style="color:{{ action.color }}" href="{{ action.link }}">
+                      {{ action.label }}
+                    </md-button>
+                  </md-card-actions>
+                </md-card>
+              </div>
             </md-content>
           </md-tab>
         </md-tabs>
