@@ -6,7 +6,7 @@ website repo forked from an existing framework.
 
 This site can still be accessed at 
 [4U6U57.github.io/website-depreciated]
-(4U6U57.github.io/website-depreciated).
+(http://4U6U57.github.io/website-depreciated).
 
 ## Branches
 Each branch in this repo reflects an iteration of the site. Below are
