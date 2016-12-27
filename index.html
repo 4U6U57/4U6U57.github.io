@@ -1,76 +1,60 @@
-<html lang="en">
-  <head>
-    <script type="text/javascript" src="rollbar.js"></script>
+---
+layout: default
+title: Material Card
+---
+<div>
+  <div class="posts mdl-grid">
+    {% for post in paginator.posts %}
+    {% assign words = post.content | number_of_words %}
+    {% if forloop.first %}
+    <div class="mdl-card mdl-cell mdl-cell--8-col  mdl-shadow--2dp">
+      <div class="mdl-card__title titlebox" style="background-color: #333;">
+        <h2 class="mdl-card__title-text titleborder"><a class="index-titles" href="{{ post.url | relative_url }}" style="color: white;">{{ post.title }}</h2></a>
+      </div>
+      <div class="mdl-card__supporting-text" id="bottomremover">
+        <p><strong>{{ post.date | date: '%B %d, %Y' }}</strong>&emsp;•&emsp;{% include readtime.html %}</p>
+        <p class="excerpt">{{ post.content | strip_html | truncatewords: 65 }}</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border" id="topreducer">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | relative_url }}">Read More</a>
+      </div>
 
-    <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <script type="text/javascript" src ="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
-  <body ng-app="IndexApp" ng-cloak>
-    <div ng-controller="IndexCtrl" ng-cloak>
-      <md-toolbar>
-        <div class="md-toolbar-tools">
-          <h2>
-            <span>{{ index.header }}</span>
-          </h2>
-          <span flex></span>
-          <md-button aria-label="{{ index.source.label }}" href="{{ index.source.link }}">
-            {{ index.source.content }}
-            <md-icon aria-label="{{ index.source.icon }}" class="material-icons">{{ index.source.icon }}</md-icon>
-          </md-button>
-        </div>
-      </md-toolbar>
-      <md-content>
-        <md-tabs md-dynamic-height>
-          <md-tab ng-repeat="tab in index.tabs" label="{{ tab.label }}">
-            <md-content class="md-padding" layout-xs="column" layout="row">
-              <div flex-xs flex-gt-xs="column" layout="column">
-                <md-card ng-repeat="card in tab.cards">
-                  <md-card-header ng-if="card.header || card.subhead || card.icon">
-                    <md-card-avatar ng-if="card.icon">
-                      <md-icon aria-label="{{ card.icon }}" class="md-avatar-icon material-icons">
-                        {{ card.icon }}
-                      </md-icon>
-                    </md-card-avatar>
-                    <md-card-header-text ng-if="card.header || card.subhead">
-                      <span ng-if="card.header" class="md-title">{{ card.header }}</span>
-                      <span ng-if="card.subhead" class="md-subhead">{{ card.subhead }}</span>
-                    </md-card-header-text>
-                  </md-card-header>
-                  <md-card-content ng-if="card.contents">
-                    <p ng-repeat="content in card.contents">{{ content }}</p>
-                  </md-card-content>
-                  <md-card-actions ng-if="card.actions" layout="row" layout-align="end center">
-                    <md-button class="md-accent" ng-repeat="action in card.actions | orderBy:'label'" aria-label="{{ action.label }}"
-                      style="color:{{ action.color }}" href="{{ action.link }}">
-                      {{ action.label }}
-                    </md-button>
-                  </md-card-actions>
-                </md-card>
-              </div>
-            </md-content>
-          </md-tab>
-        </md-tabs>
-      </md-content>
     </div>
+    {% else %}
+    <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop  mdl-shadow--2dp">
+      <div class="mdl-card__title titlebox" {% if post.color %} style="background-color: {{ post.color }};" {% else %} style="background-color: #333;"  {% endif %}>
+        <h6 class="mdl-card__title-text">
+          <a class="index-titles" href="{{ post.url | relative_url }}"  {% if post.textcolor %} style="color: {{ post.textcolor }};" {% else %} style="color: white;"  {% endif %}>{{ post.title }}</h2></a>
+      </div>
+      <div class="mdl-card__supporting-text" id="bottomremover">
+        <p><strong>{{ post.date | date: '%B %d, %Y' }}</strong>&emsp;•&emsp;{% include readtime.html %}</p>
+        <p class="excerpt">{{ post.content | strip_html | truncatewords: 33 }}</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border" id="topreducer">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | relative_url }}">Read More</a>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
 
-    <!-- Better libraries, better frameworks, PapaJS -->
-
-    <!-- Angular.js Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-
-    <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-
-    <!-- Firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
-
-    <!-- Angular Bootstrap -->
-    <script src="index.js"></script>
-  </body>
-</html>
+    <nav class="bottom-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="bottom-nav__button" title="show previous">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style=".mdl-button:hover{background-color:white;}">
+          <i class="material-icons" role="presentation">arrow_backward</i>
+        </button>
+        Older
+      </a>
+      {% endif %}
+      {% if paginator.previous_page %}
+      <div class="section-spacer"></div>
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="bottom-nav__button" title="show more">
+        Newer
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style=".mdl-button:hover{background-color:white;}">
+          <i class="material-icons" role="presentation">arrow_forward</i>
+        </button>
+      </a>
+      {% endif %}
+    </nav>
+  </div>
+</div>
